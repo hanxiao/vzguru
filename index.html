@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title lang="en">Verkehrszeichen Guru</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <!-- Link Swiper's CSS -->
+
+    <link rel="stylesheet" href="lib/css/swiper.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="lib/js/jquery-1.11.3.min.js"></script>
+    <script src="lib/js/jquery-lang.js" charset="utf-8" type="text/javascript"></script>
+    <script type="text/javascript">
+        // Create language switcher instance and set default language to de
+        window.lang = new Lang('en');
+    </script>
+</head>
+<body>
+
+<div id="title">
+    <span lang="en">Verkehrszeichen Guru</span>
+
+    <select onchange="switchLanguage()">
+        <option value="german" style="background-image: url('img/globe.svg')">Deutsch</option>
+        <option value="chinese">中文</option>
+        <option value="english">English</option>
+    </select>
+</div>
+<!-- Swiper -->
+<div class="swiper-container">
+    <div class="swiper-wrapper" id="swipeSlides">
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+
+<div id="download-app"></div>
+
+<footer>
+    <span lang="en">OJINS.COM All rights reserved 2015</span>&nbsp;&nbsp;&nbsp;
+    <span lang="en">Contact:</span> <a href="mailto:vzguru@ojins.com">
+    vzguru@ojins.com</a>
+</footer>
+
+
+<script type="text/javascript" src="lib/js/swiper.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
