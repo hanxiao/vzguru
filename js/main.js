@@ -31,6 +31,7 @@ function switchLanguage() {
             'img/' + screenshotPath + '/5.5-inch%20(iPhone%206+)%20-%20Screenshot%20' + i + '.jpg")></div>');
     }
 
+
     var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
         paginationClickable: true,
@@ -39,6 +40,7 @@ function switchLanguage() {
         spaceBetween: 0
     });
 
+    swiper.update();
     $('#download-app').css('background-image','url(' + 'img/' + screenshotPath + '/' + downloadBtn +')');
     window.lang.change(screenshotPath);
 }
@@ -48,6 +50,25 @@ function init() {
     window.lang.dynamic('zh', 'lang/zh.json');
     window.lang.dynamic('de', 'lang/de.json');
     switchLanguage();
+}
+
+function goAppStore() {
+    var a = document.createElement('a');
+    a.setAttribute("href", 'https://geo.itunes.apple.com/us/app/candy-crush-saga/id553834731?mt=8');
+    a.setAttribute("target", "_blank");
+    fireClick(a);
+}
+
+function fireClick(node){
+    if ( document.createEvent ) {
+        var evt = document.createEvent('MouseEvents');
+        evt.initEvent('click', true, false);
+        node.dispatchEvent(evt);
+    } else if( document.createEventObject ) {
+        node.fireEvent('onclick') ;
+    } else if (typeof node.onclick == 'function' ) {
+        node.onclick();
+    }
 }
 
 
