@@ -50,6 +50,10 @@ function init() {
     window.lang.dynamic('zh', 'lang/zh.json');
     window.lang.dynamic('de', 'lang/de.json');
     switchLanguage();
+    if (isWeixinBrowser()) {
+        alert("由于微信内置的浏览器不支持直接打开App Store的链接，请点击右上角并选择从Safari中打开此页，再进行下载安装。");
+        $('.notif .warning').fadeIn();
+    }
 }
 
 function goAppStore() {
@@ -69,6 +73,11 @@ function fireClick(node){
     } else if (typeof node.onclick == 'function' ) {
         node.onclick();
     }
+}
+
+function isWeixinBrowser() {
+    var ua = navigator.userAgent.toLowerCase();
+    return (/micromessenger/.test(ua)) ? true : false ;
 }
 
 
