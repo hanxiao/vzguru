@@ -52,7 +52,7 @@ function init() {
     switchLanguage();
     if (isWeixinBrowser()) {
         alert("由于微信内置的浏览器不支持直接打开App Store的链接，请点击右上角并选择从Safari中打开此页，再进行下载安装。");
-        $('.notif .warning').fadeIn();
+        $('.notif').fadeIn();
     }
 }
 
