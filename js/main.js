@@ -51,7 +51,7 @@ function init() {
     window.lang.dynamic('de', 'lang/de.json');
     switchLanguage();
     if (isWeixinBrowser()) {
-        alert("由于微信内置的浏览器不支持直接打开App Store的链接，请点击右上角并选择“从Safari中打开”，再进行下载安装。");
+        alert("由于微信不支持直接打开App Store或Google Play的链接，请点击右上角并选择“从Safari/浏览器中打开”，再进行下载安装。");
         $('.notif').show();
     }
 }
