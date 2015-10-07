@@ -32,12 +32,6 @@
     </span>
     <br>
     <span lang="en">Verkehrszeichen Guru</span>
-
-    <select onchange="switchLanguage()">
-        <option value="german" style="background-image: url('img/globe.svg')">Deutsch</option>
-        <option value="chinese">中文</option>
-        <option value="english">English</option>
-    </select>
 </div>
 <div class="notif warning" style="display: none">
     <h2>由于微信内置的浏览器不支持直接打开App Store的链接，请点击右上角并选择“从Safari中打开”，再进行下载安装。</h2>
@@ -53,7 +47,17 @@
     <div class="swiper-button-prev"></div>
 </div>
 
+<center>
+<select onchange="switchLanguage()">
+    <option value="german" style="background-image: url('img/globe.svg')">Deutsch</option>
+    <option value="chinese">中文</option>
+    <option value="english">English</option>
+</select>
+</center>
+
 <div id="download-app" onclick="goAppStore();"></div>
+<div id="download-apk" onclick="goApkStore();"></div>
+
 
 
 <footer>

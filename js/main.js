@@ -63,6 +63,13 @@ function goAppStore() {
     fireClick(a);
 }
 
+function goApkStore() {
+    var a = document.createElement('a');
+    a.setAttribute("href", 'apk/vzguru-1.0.0.apk');
+    a.setAttribute("target", "_blank");
+    fireClick(a);
+}
+
 function fireClick(node){
     if ( document.createEvent ) {
         var evt = document.createEvent('MouseEvents');
