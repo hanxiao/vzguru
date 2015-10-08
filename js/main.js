@@ -7,21 +7,25 @@
 function switchLanguage() {
 
     var screenshotPath;
-    var downloadBtn;
+    var downloadBtnIOS;
+    var downloadBtnAndroid;
 
     switch ($( "select option:selected" ).val()) {
         case 'german':
         default :
             screenshotPath = "de";
-            downloadBtn = "Download_on_the_App_Store_Badge_DE_Source_135x40.svg";
+            downloadBtnIOS = "Download_on_the_App_Store_Badge_DE_Source_135x40.svg";
+            downloadBtnAndroid = "de_generic_rgb_wo_60.png";
             break;
         case 'chinese':
             screenshotPath = "zh";
-            downloadBtn = "Download_on_the_App_Store_Badge_CN_135x40.svg";
+            downloadBtnIOS = "Download_on_the_App_Store_Badge_CN_135x40.svg";
+            downloadBtnAndroid = "zh-cn_generic_rgb_wo_60.png";
             break;
         case 'english':
             screenshotPath = "en";
-            downloadBtn = "Download_on_the_App_Store_Badge_US-UK_135x40.svg";
+            downloadBtnIOS = "Download_on_the_App_Store_Badge_US-UK_135x40.svg";
+            downloadBtnAndroid = "en_generic_rgb_wo_60.png";
             break;
     }
 
@@ -41,7 +45,8 @@ function switchLanguage() {
     });
 
     swiper.update();
-    $('#download-app').css('background-image','url(' + 'img/' + screenshotPath + '/' + downloadBtn +')');
+    $('#download-app').css('background-image','url(' + 'img/' + screenshotPath + '/' + downloadBtnIOS +')');
+    $('#download-google').css('background-image','url(' + 'img/' + screenshotPath + '/' + downloadBtnAndroid +')');
     window.lang.change(screenshotPath);
 }
 
@@ -51,7 +56,7 @@ function init() {
     window.lang.dynamic('de', 'lang/de.json');
     switchLanguage();
     if (isWeixinBrowser()) {
-        alert("由于微信不支持直接打开App Store或Google Play的链接，请点击右上角并选择“从Safari/浏览器中打开”，再进行下载安装。");
+        alert("由于微信不支持打开指向App Store和Google Play的链接，请点击右上角并选择“从Safari/浏览器中打开”，再进行下载安装。");
         $('.notif').show();
     }
 }
@@ -59,6 +64,13 @@ function init() {
 function goAppStore() {
     var a = document.createElement('a');
     a.setAttribute("href", 'https://geo.itunes.apple.com/us/app/verkehrszeichen-guru-vz-guru/id1041784760?mt=8');
+    a.setAttribute("target", "_blank");
+    fireClick(a);
+}
+
+function goAndroidStore() {
+    var a = document.createElement('a');
+    a.setAttribute("href", 'https://play.google.com/store/apps/details?id=com.ojins.vzguru');
     a.setAttribute("target", "_blank");
     fireClick(a);
 }

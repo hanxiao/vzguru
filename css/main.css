@@ -75,6 +75,17 @@ body {
     display: block;
 }
 
+#download-google {
+    margin-top: 5vh;
+    width: 100vw;
+    height: 10vh;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: block;
+}
+
 #download-apk {
     margin-top: 5vh;
     width: 100vw;
