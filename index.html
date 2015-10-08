@@ -16,7 +16,9 @@
     </script>
 </head>
 <body>
-
+<div style='display:none;'>
+    <img src='img/small.png' />
+</div>
 
 <div id="title">
     <span>
@@ -48,11 +50,11 @@
 </div>
 
 <center>
-<select onchange="switchLanguage()">
-    <option value="german" style="background-image: url('img/globe.svg')">Deutsch</option>
-    <option value="chinese">中文</option>
-    <option value="english">English</option>
-</select>
+    <select onchange="switchLanguage()">
+        <option value="german" style="background-image: url('img/globe.svg')">Deutsch</option>
+        <option value="chinese">中文</option>
+        <option value="english">English</option>
+    </select>
 </center>
 
 <div id="download-app" onclick="goAppStore();"></div>
